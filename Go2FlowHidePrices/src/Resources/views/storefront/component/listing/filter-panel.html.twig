@@ -1,0 +1,6 @@
+{% sw_extends '@Storefront/storefront/component/listing/filter-panel.html.twig' %}
+{% block component_filter_panel_item_price %}
+    {% if not page.go2flowHidePrices %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

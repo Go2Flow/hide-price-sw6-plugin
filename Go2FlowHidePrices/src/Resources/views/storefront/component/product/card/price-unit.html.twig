@@ -1,0 +1,14 @@
+{% sw_extends '@Storefront/storefront/component/product/card/price-unit.html.twig' %}
+{% block component_product_box_price_unit %}
+    {% if product.extensions.g2f_hide_price.hide %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block component_product_box_price %}
+    {% if product.extensions.g2f_hide_price.hide %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

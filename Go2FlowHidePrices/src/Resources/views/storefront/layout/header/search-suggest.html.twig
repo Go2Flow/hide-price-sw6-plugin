@@ -1,0 +1,8 @@
+{% sw_extends '@Storefront/storefront/layout/header/search-suggest.html.twig' %}
+
+{% block layout_search_suggest_result_price %}
+    {% if product.extensions.g2f_hide_price.hide %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

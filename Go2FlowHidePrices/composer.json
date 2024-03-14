@@ -1,0 +1,44 @@
+{
+  "name": "go2flow/hide-prices",
+  "version": "1.0.0",
+  "description": "Hide Price 6 Plugin",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Go 2 Flow AG",
+      "homepage": "https://go2flow.com",
+      "role": "Manufacturer"
+    }
+  ],
+  "require": {
+    "shopware/core": "^6.5.0.0",
+    "shopware/storefront": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Go2FlowHidePrices\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Go2FlowHidePrices\\Go2FlowHidePrices",
+    "copyright": "(c) by go2flow",
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "label": {
+      "de-DE": "Go2Flow Preise ausblenden",
+      "en-GB": "Go2Flow Hide Price"
+    },
+  "description": {
+      "de-DE": "Zeige Preise nur für bestimmte Kundengruppen",
+      "en-GB": "Hide Prices in Storefront for Customers"
+  },
+  "manufacturerLink": {
+      "de-DE": "https://go2flow.com/",
+      "en-GB": "https://go2flow.com/"
+  },
+  "supportLink": {
+      "de-DE": "https://go2flow.com/kontakt/",
+      "en-GB": "https://go2flow.com/kontakt/"
+  }
+  }
+}

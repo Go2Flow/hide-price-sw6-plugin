@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
+{% block component_product_box_action_inner %}
+    {% if product.extensions.g2f_hide_price.hide %}
+        <div class="product-action">
+            <div class="d-grid">
+                <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+                   class="btn btn-light"
+                   title="{{ "listing.boxProductDetails"|trans|striptags }}">
+                    {{ "listing.boxProductDetails"|trans|sw_sanitize }}
+                </a>
+            </div>
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+        <title lang="de-CH">Grundeinstellungen</title>
+
+        <input-field type="checkbox">
+            <name>active</name>
+            <label>Active</label>
+            <label lang="de-DE">Aktiv</label>
+            <label lang="de-CH">Aktiv</label>
+            <helpText>Tick to enable this plugin</helpText>
+            <helpText lang="de-DE">Aktivieren Sie dieses Kästchen, um das Plugin zu aktivieren</helpText>
+            <helpText lang="de-CH">Aktivieren Sie dieses Kästchen, um das Plugin zu aktivieren</helpText>
+        </input-field>
+        <component name="sw-entity-multi-id-select">
+            <name>customerGroups</name>
+            <entity>customer_group</entity>
+            <label>Allowed Customer Groups</label>
+            <label lang="de-DE">Erlaubte Kundengruppen</label>
+            <label lang="de-CH">Erlaubte Kundengruppen</label>
+            <labelProperty>name</labelProperty>
+        </component>
+        <component name="sw-entity-multi-id-select">
+            <name>categories</name>
+            <entity>category</entity>
+            <label>Allowed Categories</label>
+            <label lang="de-DE">Erlaubte Kategorien</label>
+            <label lang="de-CH">Erlaubte Kategorien</label>
+            <labelProperty>name</labelProperty>
+        </component>
+        <component name="sw-entity-multi-id-select">
+            <name>products</name>
+            <entity>product</entity>
+            <label>Allowed Products</label>
+            <label lang="de-DE">Erlaubte Produkte</label>
+            <label lang="de-CH">Erlaubte Produkte</label>
+            <labelProperty>name</labelProperty>
+        </component>
+    </card>
+
+</config>
