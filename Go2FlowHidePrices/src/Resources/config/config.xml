@@ -33,13 +33,12 @@
             <label lang="de-CH">Erlaubte Kategorien</label>
             <labelProperty>name</labelProperty>
         </component>
-        <component name="sw-entity-multi-id-select">
+        <component name="g2f-hp-product-select">
             <name>products</name>
             <entity>product</entity>
             <label>Allowed Products</label>
             <label lang="de-DE">Erlaubte Produkte</label>
             <label lang="de-CH">Erlaubte Produkte</label>
-            <labelProperty>name</labelProperty>
         </component>
     </card>
 

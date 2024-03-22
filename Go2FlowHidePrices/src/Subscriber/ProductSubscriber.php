@@ -5,6 +5,7 @@ namespace Go2FlowHidePrices\Subscriber;
 use Go2FlowHidePrices\Service\PriceBlockValidationService;
 use Go2FlowHidePrices\Struct\HidePriceStruct;
 use Shopware\Core\Checkout\Cart\Event\BeforeLineItemAddedEvent;
+use Shopware\Core\Checkout\Cart\Event\CartLoadedEvent;
 use Shopware\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Shopware\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CalculatedCheapestPrice;
 use Shopware\Core\Content\Product\ProductEvents;
@@ -35,6 +36,7 @@ class ProductSubscriber implements EventSubscriberInterface
         return [
             'sales_channel.'.ProductEvents::PRODUCT_LOADED_EVENT => 'onProductLoaded',
             BeforeLineItemAddedEvent::class         => 'onAddToCart',
+            CartLoadedEvent::class                  => 'onCartLoaded',
             ProductPageLoadedEvent::class           => 'onPageLoaded',
             NavigationPageLoadedEvent::class        => 'onPageLoaded',
             SearchPageLoadedEvent::class            => 'onPageLoaded',
@@ -87,6 +89,20 @@ class ProductSubscriber implements EventSubscriberInterface
             )
         ) {
             $event->getCart()->remove($event->getLineItem()->getId());
+        }
+    }
+
+    public function onCartLoaded(CartLoadedEvent $event)
+    {
+        foreach ($event->getCart()->getLineItems() as $item) {
+            if (
+                $this->priceBlockValidationService->shouldRemoveItem(
+                    $item->getId(),
+                    $event->getSalesChannelContext()
+                )
+            ) {
+                $event->getCart()->remove($item->getId());
+            }
         }
     }
 
