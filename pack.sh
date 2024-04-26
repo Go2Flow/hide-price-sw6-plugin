@@ -10,7 +10,7 @@ fi
 echo "${GREEN}-----start packing-----${NC}"
 echo
 mkdir -p Archive/tmp/Go2FlowHidePrices
-cp -rp Go2FlowHidePrices Archive/tmp/Go2FlowHidePrices/
+cp -rp Go2FlowHidePrices Archive/tmp/
 cd Archive/tmp/
 echo
 zip -r Go2FlowHidePrices-$1.zip . -x '**/.*' -x '**/__MACOSX'
