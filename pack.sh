@@ -9,11 +9,12 @@ if [ -z "$1" ]
 fi
 echo "${GREEN}-----start packing-----${NC}"
 echo
-cp -rp Go2FlowInviteCustomer Archive/tmp/Go2FlowInviteCustomer/
+mkdir -p Archive/tmp/Go2FlowHidePrices
+cp -rp Go2FlowHidePrices Archive/tmp/Go2FlowHidePrices/
 cd Archive/tmp/
 echo
-zip -r Go2FlowInviteCustomer-$1.zip . -x '**/.*' -x '**/__MACOSX'
-mv Go2FlowInviteCustomer-$1.zip ../
+zip -r Go2FlowHidePrices-$1.zip . -x '**/.*' -x '**/__MACOSX'
+mv Go2FlowHidePrices-$1.zip ../
 rm -rf ./*
 cd ../../
 echo
