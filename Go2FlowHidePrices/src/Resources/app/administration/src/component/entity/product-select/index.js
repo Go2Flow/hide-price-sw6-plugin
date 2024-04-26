@@ -24,20 +24,20 @@ Component.extend('g2f-hp-product-select', 'sw-entity-multi-id-select', {
                 this.collection = collection;
             }
 
-            if (this.ids.length <= 0) {
+            if (this.value.length <= 0) {
                 this.collection = collection;
                 return Promise.resolve(this.collection);
             }
 
             const criteria = Criteria.fromCriteria(this.criteria);
-            criteria.setIds(this.ids);
+            criteria.setIds(this.value);
             criteria.setTerm('');
             criteria.queries = [];
 
             return this.repository.search(criteria, { ...this.context, inheritance: true }).then((entities) => {
                 this.collection = entities;
 
-                if (!this.collection.length && this.ids.length) {
+                if (!this.collection.length && this.value.length) {
                     this.updateIds(this.collection);
                 }
 

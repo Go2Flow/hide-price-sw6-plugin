@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+{% block buy_widget_buy_container %}
+    {% if product.extensions.g2f_hide_price.hide %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
